@@ -12,8 +12,11 @@ A modern, clean and minimal login page UI built using HTML & CSS with macOS-styl
 
 ## 📂 Project Structure
 login-redesign-ui/
+
 ├── index.html
+
 ├── style.css
+
 └── illustration.png
 
 ## 🚀 Usage
