@@ -19,7 +19,7 @@ login-redesign-ui/
 ## 🚀 Usage
 Clone and open the project:
 
-git clone https://github.com/yourusername/login-redesign-ui.git  
+git clone https://github.com/livealyx/Login-Redesign.git
 cd login-redesign-ui  
 open index.html
 
