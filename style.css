@@ -1,0 +1,224 @@
+/* Global Reset and Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EFECFF;
+    /* Light purple background from edges */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111;
+}
+
+/* Main Container - The "Browser Window" */
+.main-container {
+    background-color: #fff;
+    width: 90vw;
+    max-width: 1100px;
+    height: 85vh;
+    /* Fixed height for the window look */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Window Header (Traffic lights + Address bar) */
+.window-header {
+    height: 48px;
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.traffic-lights {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background-color: #FF5F56;
+}
+
+.dot.yellow {
+    background-color: #FFBD2E;
+}
+
+.dot.green {
+    background-color: #27C93F;
+}
+
+.address-bar {
+    background-color: #f1f1f1;
+    height: 24px;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Content Layout */
+.content-wrapper {
+    flex: 1;
+    display: flex;
+}
+
+/* Left Panel */
+.left-panel {
+    width: 50%;
+    position: relative;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.back-btn {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #f9f9f9;
+}
+
+.login-container {
+    max-width: 320px;
+    margin: 0 auto;
+    /* Center horizontally in left panel */
+}
+
+.icon-wrapper {
+    margin-bottom: 24px;
+}
+
+.icon-wrapper svg {
+    color: #111;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #EAEAEA;
+    border-radius: 50px;
+    /* Full rounded/pill shape */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.auth-btn:hover {
+    background-color: #f9f9f9;
+}
+
+.auth-btn.github {
+    background-color: #F8F8F8;
+    /* Light gray for github btn as seen in image */
+    border: none;
+    /* Looks borderless or very subtle */
+}
+
+.auth-btn.github:hover {
+    background-color: #f0f0f0;
+}
+
+/* Right Panel */
+.right-panel {
+    width: 50%;
+    margin: 20px 20px 20px 0;
+    /* Margin around the purple card */
+    background-color: #6345FF;
+    /* Vibrant purple */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.illustration {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    /* Invert colors to white since illustration is black on transparent */
+    filter: invert(1) brightness(2);
+    mix-blend-mode: lighten;
+    /* Drops the black background */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+        margin: 0;
+    }
+
+    .right-panel {
+        display: none;
+        /* On mobile typically split screens stack or hide one */
+    }
+
+    .main-container {
+        height: auto;
+        min-height: 90vh;
+    }
+}
